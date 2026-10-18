@@ -18,8 +18,12 @@ services:
       - path: .env
         required: false
     environment:
+      # Always the local, passwordless FalkorDB, even if .env holds FalkorDB Cloud credentials.
       FALKOR_HOST: falkordb
       FALKOR_PORT: "6379"
+      FALKOR_USERNAME: ""
+      FALKOR_PASSWORD: ""
+      FALKOR_SSL: "false"
     depends_on:
       falkordb:
         condition: service_healthy
