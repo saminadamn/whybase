@@ -1,4 +1,6 @@
-# Render Blueprint: the app as one Docker web service. FalkorDB lives in FalkorDB Cloud (see docs/DEPLOY.md).
+# Render Blueprint: one Docker web service. With FALKOR_HOST unset or localhost, the image runs
+# its bundled FalkorDB in the same container (in-memory; Kettle Labs is reseeded on every start).
+# To use FalkorDB Cloud instead, set FALKOR_HOST/PORT/USERNAME/PASSWORD and FALKOR_SSL=true (see docs/DEPLOY.md).
 # Values marked sync: false are prompted for in the Render dashboard and never stored in git.
 services:
   - type: web
@@ -9,16 +11,6 @@ services:
     healthCheckPath: /api/health
     autoDeploy: true
     envVars:
-      - key: FALKOR_HOST
-        sync: false
-      - key: FALKOR_PORT
-        sync: false
-      - key: FALKOR_USERNAME
-        sync: false
-      - key: FALKOR_PASSWORD
-        sync: false
-      - key: FALKOR_SSL
-        value: "true"
       - key: GRAPH_NAME
         value: whybase
       - key: LLM_MODEL

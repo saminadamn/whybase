@@ -32,6 +32,10 @@ docker compose up -d --build  # the app seeds Kettle Labs on first start
 
 4. Deploy and open the service URL. On first start the app sees an empty graph and seeds Kettle Labs. Check `/api/health`; it should report `"falkordb": "ok"`.
 
+## Option C — a single container with the bundled FalkorDB (no database setup)
+
+The image ships FalkorDB. When `FALKOR_HOST` is unset or `localhost`, `start.sh` runs it inside the same container, so a free Render web service works with no other configuration: *New → Blueprint* on this repo uses `render.yaml`. The graph lives in memory only, so it resets whenever the instance restarts or spins down; the app reseeds Kettle Labs on every start, and anything ingested since is lost. That's fine for a demo; use Option A or B to keep data.
+
 ## Before you share the link
 
 - **`POST /api/reset` is public.** Anyone can wipe and reseed the demo graph. That's harmless for a demo (it only restores Kettle Labs), but remove the route or put it behind auth for anything else.
