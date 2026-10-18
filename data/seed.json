@@ -1,0 +1,1272 @@
+{
+  "company": "Kettle Labs (fictional, synthetic data)",
+  "teams": [
+    {
+      "name": "Platform",
+      "owns": [
+        "event-bus",
+        "auth-service",
+        "data-warehouse",
+        "api-gateway"
+      ]
+    },
+    {
+      "name": "Payments",
+      "owns": [
+        "payments-ledger",
+        "checkout-api",
+        "fraud-engine"
+      ]
+    },
+    {
+      "name": "Growth",
+      "owns": [
+        "notification-service",
+        "feature-flags"
+      ]
+    },
+    {
+      "name": "Search",
+      "owns": [
+        "search-index"
+      ]
+    },
+    {
+      "name": "Mobile",
+      "owns": [
+        "mobile-app"
+      ]
+    },
+    {
+      "name": "Security",
+      "owns": [
+        "secrets-vault",
+        "audit-log"
+      ]
+    }
+  ],
+  "systems": [
+    {
+      "name": "event-bus",
+      "description": "Company-wide asynchronous messaging backbone between services."
+    },
+    {
+      "name": "auth-service",
+      "description": "Issues and validates sessions for every Kettle Labs app."
+    },
+    {
+      "name": "data-warehouse",
+      "description": "Analytics warehouse that holds product and finance data."
+    },
+    {
+      "name": "payments-ledger",
+      "description": "Source of truth for every money movement."
+    },
+    {
+      "name": "checkout-api",
+      "description": "Public API that turns carts into paid orders."
+    },
+    {
+      "name": "notification-service",
+      "description": "Sends email, push and in-app notifications."
+    },
+    {
+      "name": "feature-flags",
+      "description": "Controls rollouts and experiments per user segment."
+    },
+    {
+      "name": "search-index",
+      "description": "Product and help-centre search."
+    },
+    {
+      "name": "api-gateway",
+      "description": "Single entry point for public and partner API traffic."
+    },
+    {
+      "name": "fraud-engine",
+      "description": "Scores every payment for fraud risk before capture."
+    },
+    {
+      "name": "mobile-app",
+      "description": "Kettle Labs iOS and Android apps."
+    },
+    {
+      "name": "secrets-vault",
+      "description": "Where services get credentials and API keys."
+    },
+    {
+      "name": "audit-log",
+      "description": "Tamper-evident record of who did what, for compliance."
+    }
+  ],
+  "people": [
+    {
+      "name": "Aditi Bose",
+      "team": "Platform",
+      "role": "CTO",
+      "status": "active",
+      "left_at": null
+    },
+    {
+      "name": "Priya Nair",
+      "team": "Platform",
+      "role": "Engineering Manager",
+      "status": "active",
+      "left_at": null
+    },
+    {
+      "name": "Kavya Rao",
+      "team": "Platform",
+      "role": "Backend Engineer",
+      "status": "active",
+      "left_at": null
+    },
+    {
+      "name": "Neha Joshi",
+      "team": "Platform",
+      "role": "Data Engineer",
+      "status": "active",
+      "left_at": null
+    },
+    {
+      "name": "Dev Malhotra",
+      "team": "Platform",
+      "role": "SRE",
+      "status": "left",
+      "left_at": "2026-05-30"
+    },
+    {
+      "name": "Rohan Das",
+      "team": "Payments",
+      "role": "Payments Lead",
+      "status": "active",
+      "left_at": null
+    },
+    {
+      "name": "Arjun Mehta",
+      "team": "Payments",
+      "role": "Senior Engineer",
+      "status": "left",
+      "left_at": "2026-07-15"
+    },
+    {
+      "name": "Ishaan Kapoor",
+      "team": "Payments",
+      "role": "Backend Engineer",
+      "status": "active",
+      "left_at": null
+    },
+    {
+      "name": "Farhan Ali",
+      "team": "Payments",
+      "role": "Backend Engineer",
+      "status": "active",
+      "left_at": null
+    },
+    {
+      "name": "Sana Qureshi",
+      "team": "Growth",
+      "role": "Product Manager",
+      "status": "active",
+      "left_at": null
+    },
+    {
+      "name": "Ananya Ghosh",
+      "team": "Growth",
+      "role": "Frontend Engineer",
+      "status": "active",
+      "left_at": null
+    },
+    {
+      "name": "Kabir Sethi",
+      "team": "Growth",
+      "role": "Backend Engineer",
+      "status": "active",
+      "left_at": null
+    },
+    {
+      "name": "Meera Pillai",
+      "team": "Search",
+      "role": "Search Lead",
+      "status": "active",
+      "left_at": null
+    },
+    {
+      "name": "Vikram Iyer",
+      "team": "Search",
+      "role": "ML Engineer",
+      "status": "active",
+      "left_at": null
+    },
+    {
+      "name": "Tara Menon",
+      "team": "Search",
+      "role": "Backend Engineer",
+      "status": "active",
+      "left_at": null
+    },
+    {
+      "name": "Manav Shah",
+      "team": "Platform",
+      "role": "SRE",
+      "status": "active",
+      "left_at": null
+    },
+    {
+      "name": "Pooja Reddy",
+      "team": "Payments",
+      "role": "Data Scientist",
+      "status": "active",
+      "left_at": null
+    },
+    {
+      "name": "Ira Sen",
+      "team": "Growth",
+      "role": "Product Designer",
+      "status": "active",
+      "left_at": null
+    },
+    {
+      "name": "Rhea Kulkarni",
+      "team": "Mobile",
+      "role": "Mobile Lead",
+      "status": "active",
+      "left_at": null
+    },
+    {
+      "name": "Siddharth Bhat",
+      "team": "Mobile",
+      "role": "Mobile Engineer",
+      "status": "active",
+      "left_at": null
+    },
+    {
+      "name": "Zoya Khan",
+      "team": "Mobile",
+      "role": "Android Engineer",
+      "status": "left",
+      "left_at": "2026-04-30"
+    },
+    {
+      "name": "Nikhil Verma",
+      "team": "Security",
+      "role": "Security Lead",
+      "status": "active",
+      "left_at": null
+    },
+    {
+      "name": "Leela Fernandes",
+      "team": "Security",
+      "role": "Security Engineer",
+      "status": "active",
+      "left_at": null
+    }
+  ],
+  "projects": [
+    {
+      "name": "Instant Refunds",
+      "description": "Refund customers in seconds instead of days.",
+      "uses": [
+        "payments-ledger",
+        "event-bus"
+      ],
+      "relies_on": [
+        "D-005"
+      ]
+    },
+    {
+      "name": "Partner Payouts",
+      "description": "Weekly automated payouts to marketplace partners.",
+      "uses": [
+        "payments-ledger",
+        "checkout-api"
+      ],
+      "relies_on": [
+        "D-003"
+      ]
+    },
+    {
+      "name": "Smart Notifications",
+      "description": "Send fewer, better-timed notifications.",
+      "uses": [
+        "notification-service",
+        "event-bus"
+      ],
+      "relies_on": [
+        "D-009"
+      ]
+    },
+    {
+      "name": "Search Revamp",
+      "description": "Typo-tolerant search with learned ranking.",
+      "uses": [
+        "search-index"
+      ],
+      "relies_on": [
+        "D-010"
+      ]
+    },
+    {
+      "name": "Growth Experiments",
+      "description": "Weekly A/B tests with warehouse-backed results.",
+      "uses": [
+        "feature-flags",
+        "data-warehouse"
+      ],
+      "relies_on": [
+        "D-011",
+        "D-012"
+      ]
+    },
+    {
+      "name": "Enterprise SSO",
+      "description": "SAML and OIDC sign-in for enterprise customers.",
+      "uses": [
+        "auth-service"
+      ],
+      "relies_on": [
+        "D-007"
+      ]
+    },
+    {
+      "name": "Mobile Relaunch",
+      "description": "One React Native codebase for iOS and Android.",
+      "uses": [
+        "mobile-app",
+        "api-gateway"
+      ],
+      "relies_on": [
+        "D-020",
+        "D-021"
+      ]
+    },
+    {
+      "name": "SOC 2 Readiness",
+      "description": "Pass the SOC 2 Type II audit by Q1 2027.",
+      "uses": [
+        "audit-log",
+        "secrets-vault"
+      ],
+      "relies_on": [
+        "D-014",
+        "D-015"
+      ]
+    },
+    {
+      "name": "Fraud Shield",
+      "description": "Block card-testing and wallet fraud before capture.",
+      "uses": [
+        "fraud-engine",
+        "payments-ledger"
+      ],
+      "relies_on": [
+        "D-018"
+      ]
+    },
+    {
+      "name": "Public API",
+      "description": "Self-serve API keys for partners and developers.",
+      "uses": [
+        "api-gateway",
+        "auth-service"
+      ],
+      "relies_on": [
+        "D-017"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D-001",
+      "at": "2024-03-10",
+      "summary": "Use RabbitMQ as the event bus",
+      "about": "event-bus",
+      "made_by": "Dev Malhotra",
+      "recorded_in": "S-ADR-001",
+      "status": "superseded",
+      "superseded_at": "2025-02-14",
+      "supersedes": [],
+      "relies_on": []
+    },
+    {
+      "id": "D-002",
+      "at": "2025-02-14",
+      "summary": "Move the event bus from RabbitMQ to Kafka",
+      "about": "event-bus",
+      "made_by": "Priya Nair",
+      "recorded_in": "S-ADR-007",
+      "status": "active",
+      "superseded_at": null,
+      "supersedes": [
+        "D-001"
+      ],
+      "relies_on": []
+    },
+    {
+      "id": "D-003",
+      "at": "2024-06-01",
+      "summary": "Store ledger entries as double-entry rows in Postgres",
+      "about": "payments-ledger",
+      "made_by": "Arjun Mehta",
+      "recorded_in": "S-ADR-003",
+      "status": "active",
+      "superseded_at": null,
+      "supersedes": [],
+      "relies_on": []
+    },
+    {
+      "id": "D-004",
+      "at": "2025-05-20",
+      "summary": "Publish ledger events to the Kafka topic ledger.events",
+      "about": "payments-ledger",
+      "made_by": "Arjun Mehta",
+      "recorded_in": "S-ADR-009",
+      "status": "active",
+      "superseded_at": null,
+      "supersedes": [],
+      "relies_on": [
+        "D-002",
+        "D-003"
+      ]
+    },
+    {
+      "id": "D-005",
+      "at": "2025-08-03",
+      "summary": "Refunds service consumes ledger.events for instant refunds",
+      "about": "payments-ledger",
+      "made_by": "Rohan Das",
+      "recorded_in": "S-ADR-011",
+      "status": "active",
+      "superseded_at": null,
+      "supersedes": [],
+      "relies_on": [
+        "D-004"
+      ]
+    },
+    {
+      "id": "D-006",
+      "at": "2024-01-15",
+      "summary": "Use JWT access tokens with 15-minute expiry",
+      "about": "auth-service",
+      "made_by": "Neha Joshi",
+      "recorded_in": "S-ADR-002",
+      "status": "superseded",
+      "superseded_at": "2025-10-01",
+      "supersedes": [],
+      "relies_on": []
+    },
+    {
+      "id": "D-007",
+      "at": "2025-10-01",
+      "summary": "Switch to opaque session tokens backed by Redis",
+      "about": "auth-service",
+      "made_by": "Kavya Rao",
+      "recorded_in": "S-ADR-012",
+      "status": "active",
+      "superseded_at": null,
+      "supersedes": [
+        "D-006"
+      ],
+      "relies_on": []
+    },
+    {
+      "id": "D-008",
+      "at": "2024-09-01",
+      "summary": "Use Elasticsearch for the search index",
+      "about": "search-index",
+      "made_by": "Meera Pillai",
+      "recorded_in": "S-ADR-005",
+      "status": "superseded",
+      "superseded_at": "2026-04-12",
+      "supersedes": [],
+      "relies_on": []
+    },
+    {
+      "id": "D-009",
+      "at": "2025-06-10",
+      "summary": "Trigger notifications from a Kafka consumer group",
+      "about": "notification-service",
+      "made_by": "Kabir Sethi",
+      "recorded_in": "S-ADR-010",
+      "status": "active",
+      "superseded_at": null,
+      "supersedes": [],
+      "relies_on": [
+        "D-002"
+      ]
+    },
+    {
+      "id": "D-010",
+      "at": "2026-04-12",
+      "summary": "Move search from Elasticsearch to OpenSearch",
+      "about": "search-index",
+      "made_by": "Vikram Iyer",
+      "recorded_in": "S-ADR-014",
+      "status": "active",
+      "superseded_at": null,
+      "supersedes": [
+        "D-008"
+      ],
+      "relies_on": []
+    },
+    {
+      "id": "D-011",
+      "at": "2025-11-10",
+      "summary": "Run feature flags on an in-house flag service",
+      "about": "feature-flags",
+      "made_by": "Sana Qureshi",
+      "recorded_in": "S-ADR-013",
+      "status": "active",
+      "superseded_at": null,
+      "supersedes": [],
+      "relies_on": []
+    },
+    {
+      "id": "D-012",
+      "at": "2026-02-01",
+      "summary": "Load event-bus data into the warehouse in a daily batch",
+      "about": "data-warehouse",
+      "made_by": "Neha Joshi",
+      "recorded_in": "S-ADR-015",
+      "status": "active",
+      "superseded_at": null,
+      "supersedes": [],
+      "relies_on": [
+        "D-002"
+      ]
+    },
+    {
+      "id": "D-013",
+      "at": "2024-11-05",
+      "summary": "Store service secrets in HashiCorp Vault",
+      "about": "secrets-vault",
+      "made_by": "Nikhil Verma",
+      "recorded_in": "S-ADR-016",
+      "status": "superseded",
+      "superseded_at": "2026-06-20",
+      "supersedes": [],
+      "relies_on": []
+    },
+    {
+      "id": "D-014",
+      "at": "2026-06-20",
+      "summary": "Move secrets from Vault to cloud KMS with short-lived credentials",
+      "about": "secrets-vault",
+      "made_by": "Leela Fernandes",
+      "recorded_in": "S-ADR-017",
+      "status": "active",
+      "superseded_at": null,
+      "supersedes": [
+        "D-013"
+      ],
+      "relies_on": []
+    },
+    {
+      "id": "D-015",
+      "at": "2026-07-01",
+      "summary": "Write audit events to an append-only log in object storage",
+      "about": "audit-log",
+      "made_by": "Leela Fernandes",
+      "recorded_in": "S-ADR-018",
+      "status": "active",
+      "superseded_at": null,
+      "supersedes": [],
+      "relies_on": [
+        "D-014",
+        "D-007"
+      ]
+    },
+    {
+      "id": "D-016",
+      "at": "2025-11-20",
+      "summary": "Route all public traffic through an Envoy-based API gateway",
+      "about": "api-gateway",
+      "made_by": "Manav Shah",
+      "recorded_in": "S-ADR-019",
+      "status": "active",
+      "superseded_at": null,
+      "supersedes": [],
+      "relies_on": [
+        "D-007"
+      ]
+    },
+    {
+      "id": "D-017",
+      "at": "2026-01-15",
+      "summary": "Rate-limit public APIs per API key at the gateway",
+      "about": "api-gateway",
+      "made_by": "Kavya Rao",
+      "recorded_in": "S-ADR-020",
+      "status": "active",
+      "superseded_at": null,
+      "supersedes": [],
+      "relies_on": [
+        "D-016"
+      ]
+    },
+    {
+      "id": "D-018",
+      "at": "2025-12-01",
+      "summary": "Score payments with a gradient-boosted fraud model",
+      "about": "fraud-engine",
+      "made_by": "Pooja Reddy",
+      "recorded_in": "S-ADR-021",
+      "status": "active",
+      "superseded_at": null,
+      "supersedes": [],
+      "relies_on": [
+        "D-003"
+      ]
+    },
+    {
+      "id": "D-019",
+      "at": "2024-07-01",
+      "summary": "Build the mobile apps natively in Swift and Kotlin",
+      "about": "mobile-app",
+      "made_by": "Zoya Khan",
+      "recorded_in": "S-ADR-022",
+      "status": "superseded",
+      "superseded_at": "2026-05-10",
+      "supersedes": [],
+      "relies_on": []
+    },
+    {
+      "id": "D-020",
+      "at": "2026-05-10",
+      "summary": "Rebuild the mobile app in React Native",
+      "about": "mobile-app",
+      "made_by": "Rhea Kulkarni",
+      "recorded_in": "S-ADR-023",
+      "status": "active",
+      "superseded_at": null,
+      "supersedes": [
+        "D-019"
+      ],
+      "relies_on": [
+        "D-011"
+      ]
+    },
+    {
+      "id": "D-021",
+      "at": "2026-08-01",
+      "summary": "Gate mobile releases behind feature flags",
+      "about": "mobile-app",
+      "made_by": "Siddharth Bhat",
+      "recorded_in": "S-ADR-024",
+      "status": "active",
+      "superseded_at": null,
+      "supersedes": [],
+      "relies_on": [
+        "D-011",
+        "D-020"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S-ADR-001",
+      "kind": "adr",
+      "title": "ADR-001: Event bus on RabbitMQ",
+      "at": "2024-03-10",
+      "author": "Dev Malhotra",
+      "mentions": [
+        "event-bus"
+      ],
+      "assumes": [],
+      "text": "We will run RabbitMQ 3.12 as the shared event bus, with one vhost per team and quorum queues for anything that touches money. The team already operates RabbitMQ for the legacy order pipeline, so this avoids a new system. We accept that replay of old messages is not supported."
+    },
+    {
+      "id": "S-ADR-002",
+      "kind": "adr",
+      "title": "ADR-002: JWT access tokens",
+      "at": "2024-01-15",
+      "author": "Neha Joshi",
+      "mentions": [
+        "auth-service"
+      ],
+      "assumes": [],
+      "text": "auth-service will issue signed JWT access tokens that expire after 15 minutes, with refresh tokens stored in an httpOnly cookie. Services validate tokens locally with the public key, so no network call is needed per request. Revocation is limited to waiting for expiry."
+    },
+    {
+      "id": "S-ADR-003",
+      "kind": "adr",
+      "title": "ADR-003: Double-entry ledger in Postgres",
+      "at": "2024-06-01",
+      "author": "Arjun Mehta",
+      "mentions": [
+        "payments-ledger"
+      ],
+      "assumes": [],
+      "text": "Every money movement is written as a pair of balanced debit and credit rows in a dedicated Postgres database. Rows are append-only; corrections are new entries, never updates. Balances are derived by summing entries per account."
+    },
+    {
+      "id": "S-ADR-005",
+      "kind": "adr",
+      "title": "ADR-005: Elasticsearch for search",
+      "at": "2024-09-01",
+      "author": "Meera Pillai",
+      "mentions": [
+        "search-index"
+      ],
+      "assumes": [],
+      "text": "search-index will run on a three-node Elasticsearch 8 cluster with one index per locale. We chose it for its mature relevance tuning and the team's prior experience. Indexing is driven by a nightly job plus change events for hot products."
+    },
+    {
+      "id": "S-ADR-007",
+      "kind": "adr",
+      "title": "ADR-007: Migrate event bus to Kafka",
+      "at": "2025-02-14",
+      "author": "Priya Nair",
+      "mentions": [
+        "event-bus"
+      ],
+      "assumes": [],
+      "text": "We are moving event-bus from RabbitMQ to Kafka. Payments and analytics need ordered, replayable streams, and RabbitMQ queues lose history once consumed. Migration runs topic by topic over Q1 with dual publishing until each consumer is cut over."
+    },
+    {
+      "id": "S-ADR-009",
+      "kind": "adr",
+      "title": "ADR-009: Ledger events on Kafka",
+      "at": "2025-05-20",
+      "author": "Arjun Mehta",
+      "mentions": [
+        "payments-ledger",
+        "event-bus"
+      ],
+      "assumes": [],
+      "text": "payments-ledger will publish every committed entry to the Kafka topic ledger.events using the transactional outbox pattern. Events are keyed by account id so per-account order is preserved. Downstream teams must treat the ledger as the only source of truth and the topic as a feed."
+    },
+    {
+      "id": "S-ADR-010",
+      "kind": "adr",
+      "title": "ADR-010: Notification triggers from Kafka",
+      "at": "2025-06-10",
+      "author": "Kabir Sethi",
+      "mentions": [
+        "notification-service",
+        "event-bus"
+      ],
+      "assumes": [],
+      "text": "notification-service will stop polling the orders database and instead trigger sends from a Kafka consumer group on the order and payment topics. This cuts database load and lets us replay a day of events after an outage. The consumer group is named notif-triggers."
+    },
+    {
+      "id": "S-ADR-011",
+      "kind": "adr",
+      "title": "ADR-011: Instant refunds via ledger events",
+      "at": "2025-08-03",
+      "author": "Rohan Das",
+      "mentions": [
+        "payments-ledger"
+      ],
+      "assumes": [],
+      "text": "The refunds service will consume ledger.events and issue a refund as soon as the reversing ledger entry is committed. This replaces the nightly refund batch and brings refund time from three days to under a minute. Idempotency is keyed on the ledger entry id."
+    },
+    {
+      "id": "S-ADR-012",
+      "kind": "adr",
+      "title": "ADR-012: Opaque session tokens",
+      "at": "2025-10-01",
+      "author": "Kavya Rao",
+      "mentions": [
+        "auth-service"
+      ],
+      "assumes": [],
+      "text": "auth-service will issue opaque session tokens and store session state in Redis instead of using self-contained JWTs. Enterprise customers need instant revocation, which JWTs with a 15-minute life cannot give. Services validate tokens through a cached call to auth-service."
+    },
+    {
+      "id": "S-ADR-013",
+      "kind": "adr",
+      "title": "ADR-013: In-house feature flags",
+      "at": "2025-11-10",
+      "author": "Sana Qureshi",
+      "mentions": [
+        "feature-flags"
+      ],
+      "assumes": [],
+      "text": "We will run feature flags on a small in-house flag service rather than renew the vendor contract. Flags are evaluated in-process from a config snapshot refreshed every 30 seconds. Experiment assignment is logged to the warehouse for analysis."
+    },
+    {
+      "id": "S-ADR-014",
+      "kind": "adr",
+      "title": "ADR-014: Move to OpenSearch",
+      "at": "2026-04-12",
+      "author": "Vikram Iyer",
+      "mentions": [
+        "search-index"
+      ],
+      "assumes": [],
+      "text": "search-index moves from Elasticsearch to OpenSearch after the licence change and to use its built-in learning-to-rank plugin. Index mappings are carried over unchanged and queries are rewritten where the APIs differ. The Elasticsearch cluster is retired after a two-week shadow period."
+    },
+    {
+      "id": "S-ADR-015",
+      "kind": "adr",
+      "title": "ADR-015: Daily warehouse batch",
+      "at": "2026-02-01",
+      "author": "Neha Joshi",
+      "mentions": [
+        "data-warehouse",
+        "event-bus"
+      ],
+      "assumes": [],
+      "text": "data-warehouse will load event-bus data in one daily batch at 02:00 IST instead of streaming. Analysts only need day-old data, and the batch is far cheaper to run. The loader reads each topic from its last committed offset."
+    },
+    {
+      "id": "S-DOC-101",
+      "kind": "doc",
+      "title": "Runbook: Restarting RabbitMQ consumers",
+      "at": "2024-05-02",
+      "author": "Dev Malhotra",
+      "mentions": [
+        "event-bus"
+      ],
+      "assumes": [
+        "D-001"
+      ],
+      "text": "When a consumer stops acking, open the RabbitMQ management UI, find the stuck queue and purge the unacked messages only if the owning team agrees. Then restart the consumer deployment with kubectl rollout restart. Check the queue depth graph drops within five minutes."
+    },
+    {
+      "id": "S-DOC-102",
+      "kind": "doc",
+      "title": "Auth onboarding guide for new engineers",
+      "at": "2024-02-20",
+      "author": "Neha Joshi",
+      "mentions": [
+        "auth-service"
+      ],
+      "assumes": [
+        "D-006"
+      ],
+      "text": "Every request carries a JWT access token that expires after 15 minutes. Validate it locally with the public key from the auth-service JWKS endpoint; never call auth-service per request. To log a user out, delete the refresh cookie and wait for the token to expire."
+    },
+    {
+      "id": "S-DOC-103",
+      "kind": "doc",
+      "title": "Search relevance tuning with Elasticsearch",
+      "at": "2025-01-08",
+      "author": "Tara Menon",
+      "mentions": [
+        "search-index"
+      ],
+      "assumes": [
+        "D-008"
+      ],
+      "text": "Boost title matches with a function_score query and keep synonyms in the Elasticsearch synonym file per locale. After changing analyzers, reindex with the _reindex API into a new index and swap the alias. Test with the saved relevance suite before releasing."
+    },
+    {
+      "id": "S-DOC-104",
+      "kind": "doc",
+      "title": "Runbook: Kafka consumer lag",
+      "at": "2025-04-01",
+      "author": "Priya Nair",
+      "mentions": [
+        "event-bus"
+      ],
+      "assumes": [
+        "D-002"
+      ],
+      "text": "If consumer lag on any Kafka topic passes 50,000 messages, check the consumer group with kafka-consumer-groups --describe. Scale the consumer deployment up to the partition count, never beyond it. If lag keeps growing, page the owning team and Platform on-call."
+    },
+    {
+      "id": "S-DOC-105",
+      "kind": "doc",
+      "title": "Ledger events integration guide",
+      "at": "2025-06-02",
+      "author": "Arjun Mehta",
+      "mentions": [
+        "payments-ledger",
+        "event-bus"
+      ],
+      "assumes": [
+        "D-004",
+        "D-002"
+      ],
+      "text": "Subscribe to the Kafka topic ledger.events with your own consumer group and key-aware processing. Events arrive in per-account order; never assume global order. Use the entry id for idempotency and never write back to the ledger from a consumer."
+    },
+    {
+      "id": "S-DOC-106",
+      "kind": "doc",
+      "title": "Warehouse batch loader README",
+      "at": "2026-02-10",
+      "author": "Neha Joshi",
+      "mentions": [
+        "data-warehouse",
+        "event-bus"
+      ],
+      "assumes": [
+        "D-012",
+        "D-002"
+      ],
+      "text": "The loader runs daily at 02:00 IST, reads each Kafka topic from its last committed offset and writes Parquet files to the warehouse staging bucket. Offsets are committed only after the load succeeds. To backfill, reset the loader's consumer group offsets to a timestamp."
+    },
+    {
+      "id": "S-DOC-107",
+      "kind": "doc",
+      "title": "Ledger reconciliation playbook",
+      "at": "2025-03-12",
+      "author": "Arjun Mehta",
+      "mentions": [
+        "payments-ledger"
+      ],
+      "assumes": [
+        "D-003"
+      ],
+      "text": "Each morning, sum debits and credits per account in the ledger Postgres replica; any non-zero difference is an incident. Compare daily totals with the bank settlement file. Fix mismatches with a correcting entry pair, never by editing rows."
+    },
+    {
+      "id": "S-CHAT-201",
+      "kind": "chat",
+      "title": "#platform: why we left RabbitMQ",
+      "at": "2025-02-10",
+      "author": "Priya Nair",
+      "mentions": [
+        "event-bus"
+      ],
+      "assumes": [],
+      "text": "Priya: Summary of today's call. RabbitMQ can't replay, and payments needs to rebuild projections from history. Kafka gives us ordered partitions and retention. ADR coming this week; dual publishing during the migration."
+    },
+    {
+      "id": "S-CHAT-202",
+      "kind": "chat",
+      "title": "#payments: ledger double-write bug",
+      "at": "2025-09-14",
+      "author": "Arjun Mehta",
+      "mentions": [
+        "payments-ledger"
+      ],
+      "assumes": [],
+      "text": "Arjun: Found it. The retry wrapper re-ran the outbox insert after a timeout, so 14 entries were written twice. Both pairs balanced, which is why reconciliation didn't catch it. Fix is an idempotency key on the outbox row; patch is in review."
+    },
+    {
+      "id": "S-CHAT-203",
+      "kind": "chat",
+      "title": "#search: OpenSearch cutover plan",
+      "at": "2026-04-05",
+      "author": "Vikram Iyer",
+      "mentions": [
+        "search-index"
+      ],
+      "assumes": [],
+      "text": "Vikram: Plan for the cutover. Shadow traffic to OpenSearch for two weeks, compare top-10 results on the relevance suite, then flip the alias. Elasticsearch stays read-only for a week after as a fallback."
+    },
+    {
+      "id": "S-TKT-301",
+      "kind": "ticket",
+      "title": "PAY-412: Refund delayed when ledger.events lags",
+      "at": "2025-10-21",
+      "author": "Rohan Das",
+      "mentions": [
+        "payments-ledger",
+        "event-bus"
+      ],
+      "assumes": [],
+      "text": "Customers saw refunds take up to 40 minutes on 20 Oct. Root cause: consumer lag on ledger.events after a partition rebalance. Added a lag alert at 5,000 messages and a fallback that re-reads committed entries from the ledger."
+    },
+    {
+      "id": "S-TKT-302",
+      "kind": "ticket",
+      "title": "PLAT-88: Kafka partition rebalance storm",
+      "at": "2025-12-03",
+      "author": "Kavya Rao",
+      "mentions": [
+        "event-bus"
+      ],
+      "assumes": [],
+      "text": "Rolling deploys of three consumer services triggered repeated group rebalances for 25 minutes. Switched those groups to cooperative sticky assignment and raised session timeouts. No data loss; lag recovered in 10 minutes."
+    },
+    {
+      "id": "S-TKT-303",
+      "kind": "ticket",
+      "title": "GRW-57: Flag service latency spike",
+      "at": "2026-03-18",
+      "author": "Kabir Sethi",
+      "mentions": [
+        "feature-flags"
+      ],
+      "assumes": [],
+      "text": "p99 flag evaluation latency jumped to 180 ms because a deploy disabled the in-process snapshot cache. Restored the cache and added a startup check that fails the pod if the snapshot is missing."
+    },
+    {
+      "id": "S-ADR-016",
+      "kind": "adr",
+      "title": "ADR-016: Secrets in HashiCorp Vault",
+      "at": "2024-11-05",
+      "author": "Nikhil Verma",
+      "mentions": [
+        "secrets-vault"
+      ],
+      "assumes": [],
+      "text": "Services fetch credentials from a three-node HashiCorp Vault cluster using Kubernetes auth. Static secrets live under kv/ per team; database passwords are rotated every 30 days by a cron job."
+    },
+    {
+      "id": "S-ADR-017",
+      "kind": "adr",
+      "title": "ADR-017: Cloud KMS with short-lived credentials",
+      "at": "2026-06-20",
+      "author": "Leela Fernandes",
+      "mentions": [
+        "secrets-vault"
+      ],
+      "assumes": [],
+      "text": "We are retiring the Vault cluster. Services get short-lived credentials from the cloud provider's KMS and IAM, valid for one hour. Running Vault cost two on-call engineers and failed the SOC 2 key-rotation control."
+    },
+    {
+      "id": "S-ADR-018",
+      "kind": "adr",
+      "title": "ADR-018: Append-only audit log",
+      "at": "2026-07-01",
+      "author": "Leela Fernandes",
+      "mentions": [
+        "audit-log"
+      ],
+      "assumes": [],
+      "text": "Every admin action and permission change is written as an event to object storage with object lock enabled, so entries cannot be edited or deleted for seven years. Actors are identified by session id."
+    },
+    {
+      "id": "S-ADR-019",
+      "kind": "adr",
+      "title": "ADR-019: Envoy API gateway",
+      "at": "2025-11-20",
+      "author": "Manav Shah",
+      "mentions": [
+        "api-gateway"
+      ],
+      "assumes": [],
+      "text": "All public and partner traffic now enters through an Envoy-based gateway that validates the opaque session token with auth-service before routing. Services no longer terminate public TLS themselves."
+    },
+    {
+      "id": "S-ADR-020",
+      "kind": "adr",
+      "title": "ADR-020: Per-key rate limits",
+      "at": "2026-01-15",
+      "author": "Kavya Rao",
+      "mentions": [
+        "api-gateway"
+      ],
+      "assumes": [],
+      "text": "The gateway enforces 600 requests per minute per API key, with bursts of 100. Limits are stored in Redis and returned in X-RateLimit headers. Partners can request higher limits through support."
+    },
+    {
+      "id": "S-ADR-021",
+      "kind": "adr",
+      "title": "ADR-021: Gradient-boosted fraud scoring",
+      "at": "2025-12-01",
+      "author": "Pooja Reddy",
+      "mentions": [
+        "fraud-engine"
+      ],
+      "assumes": [],
+      "text": "fraud-engine scores each payment with a gradient-boosted model trained weekly on labelled chargebacks. Payments scoring above 0.92 are held for review; the model reads ledger history as features."
+    },
+    {
+      "id": "S-ADR-022",
+      "kind": "adr",
+      "title": "ADR-022: Native mobile apps",
+      "at": "2024-07-01",
+      "author": "Zoya Khan",
+      "mentions": [
+        "mobile-app"
+      ],
+      "assumes": [],
+      "text": "We will build the iOS app in Swift and the Android app in Kotlin, with separate codebases and release trains. Native gives us the best performance for the camera-based receipt scanner."
+    },
+    {
+      "id": "S-ADR-023",
+      "kind": "adr",
+      "title": "ADR-023: Move to React Native",
+      "at": "2026-05-10",
+      "author": "Rhea Kulkarni",
+      "mentions": [
+        "mobile-app"
+      ],
+      "assumes": [],
+      "text": "After the Android lead left, keeping two native codebases is no longer sustainable. We are rebuilding the app in React Native with a shared codebase; the receipt scanner stays a native module."
+    },
+    {
+      "id": "S-ADR-024",
+      "kind": "adr",
+      "title": "ADR-024: Flag-gated mobile releases",
+      "at": "2026-08-01",
+      "author": "Siddharth Bhat",
+      "mentions": [
+        "mobile-app",
+        "feature-flags"
+      ],
+      "assumes": [],
+      "text": "Every new mobile feature ships dark behind a flag from the in-house flag service and is rolled out to 1%, 10% and then 100% of users. This lets us turn features off without an app-store release."
+    },
+    {
+      "id": "S-DOC-108",
+      "kind": "doc",
+      "title": "Secrets onboarding: requesting credentials",
+      "at": "2025-01-20",
+      "author": "Nikhil Verma",
+      "mentions": [
+        "secrets-vault"
+      ],
+      "assumes": [
+        "D-014"
+      ],
+      "text": "Request access through the platform portal; your service account gets an IAM role that can mint one-hour credentials from KMS. Never copy credentials into config files or CI variables.",
+      "reviewed_at": "2026-07-02",
+      "reviewed_by": "Leela Fernandes"
+    },
+    {
+      "id": "S-DOC-109",
+      "kind": "doc",
+      "title": "Android release checklist",
+      "at": "2025-02-11",
+      "author": "Siddharth Bhat",
+      "mentions": [
+        "mobile-app"
+      ],
+      "assumes": [
+        "D-020"
+      ],
+      "text": "Build the React Native bundle with the release profile, run the Detox smoke suite on three device sizes, then promote the build from internal testing to a 10% staged rollout in Play Console.",
+      "reviewed_at": "2026-05-20",
+      "reviewed_by": "Rhea Kulkarni"
+    },
+    {
+      "id": "S-DOC-110",
+      "kind": "doc",
+      "title": "Feature flag usage guide",
+      "at": "2025-12-05",
+      "author": "Kabir Sethi",
+      "mentions": [
+        "feature-flags"
+      ],
+      "assumes": [
+        "D-011"
+      ],
+      "text": "Create flags in the in-house flag service UI, name them team.feature, and always set an owner and an expiry date. Evaluate flags with the SDK's in-process snapshot; never call the service per request."
+    },
+    {
+      "id": "S-DOC-111",
+      "kind": "doc",
+      "title": "API gateway routing runbook",
+      "at": "2025-12-10",
+      "author": "Manav Shah",
+      "mentions": [
+        "api-gateway"
+      ],
+      "assumes": [
+        "D-016"
+      ],
+      "text": "Routes live in the gateway repo as Envoy config. To add a service, add a cluster and a route, run the config validator, and deploy with a canary. Roll back by reverting the config commit."
+    },
+    {
+      "id": "S-DOC-112",
+      "kind": "doc",
+      "title": "Public API rate limits",
+      "at": "2026-01-20",
+      "author": "Kavya Rao",
+      "mentions": [
+        "api-gateway"
+      ],
+      "assumes": [
+        "D-017"
+      ],
+      "text": "Each API key gets 600 requests per minute with bursts of 100. When a client is limited it gets HTTP 429 with a Retry-After header. Raise a partner's limit by editing their key's tier in the admin console."
+    },
+    {
+      "id": "S-DOC-113",
+      "kind": "doc",
+      "title": "Session token troubleshooting",
+      "at": "2025-10-20",
+      "author": "Kavya Rao",
+      "mentions": [
+        "auth-service"
+      ],
+      "assumes": [
+        "D-007"
+      ],
+      "text": "If users are logged out unexpectedly, check the Redis session store's memory and eviction policy first. Revoking a session deletes its key, so the next request fails immediately."
+    },
+    {
+      "id": "S-DOC-114",
+      "kind": "doc",
+      "title": "Fraud model retraining playbook",
+      "at": "2026-01-08",
+      "author": "Pooja Reddy",
+      "mentions": [
+        "fraud-engine"
+      ],
+      "assumes": [
+        "D-018"
+      ],
+      "text": "Retrain every Monday on the last 180 days of labelled chargebacks. Compare precision at the 0.92 threshold with the current model and only promote if it is at least as good."
+    },
+    {
+      "id": "S-CHAT-204",
+      "kind": "chat",
+      "title": "#security: Vault vs KMS",
+      "at": "2026-06-12",
+      "author": "Leela Fernandes",
+      "mentions": [
+        "secrets-vault"
+      ],
+      "assumes": [],
+      "text": "Leela: Auditors flagged that Vault root tokens were rotated by hand. KMS gives us automatic rotation and short-lived creds for free. Proposal: migrate team by team in June, Vault read-only from July."
+    },
+    {
+      "id": "S-CHAT-205",
+      "kind": "chat",
+      "title": "#mobile: React Native spike results",
+      "at": "2026-04-22",
+      "author": "Rhea Kulkarni",
+      "mentions": [
+        "mobile-app"
+      ],
+      "assumes": [],
+      "text": "Rhea: Two-week spike done. React Native rebuilt checkout and the home feed with 80% shared code; the receipt scanner stays native. Startup time is 120 ms slower on low-end Android, which is acceptable."
+    },
+    {
+      "id": "S-TKT-304",
+      "kind": "ticket",
+      "title": "SEC-19: Audit log gap during deploy",
+      "at": "2026-08-14",
+      "author": "Nikhil Verma",
+      "mentions": [
+        "audit-log"
+      ],
+      "assumes": [],
+      "text": "Admin actions were missing from the audit log for 4 minutes during a rolling deploy because the writer dropped events on shutdown. Added a drain step and an alert on event-count gaps."
+    },
+    {
+      "id": "S-TKT-305",
+      "kind": "ticket",
+      "title": "FRD-7: False positives on wallet top-ups",
+      "at": "2026-02-02",
+      "author": "Farhan Ali",
+      "mentions": [
+        "fraud-engine"
+      ],
+      "assumes": [],
+      "text": "The fraud model held 3% of wallet top-ups because top-ups were missing from training data. Added them to the label set and retrained; holds dropped to 0.4%."
+    },
+    {
+      "id": "S-TKT-306",
+      "kind": "ticket",
+      "title": "MOB-212: Crash on Android 15 after RN upgrade",
+      "at": "2026-06-03",
+      "author": "Siddharth Bhat",
+      "mentions": [
+        "mobile-app"
+      ],
+      "assumes": [],
+      "text": "The React Native 0.81 upgrade crashed on Android 15 when the receipt scanner opened. Root cause was a stale native module binding; pinned the camera library and added a device-farm test."
+    },
+    {
+      "id": "S-TKT-307",
+      "kind": "ticket",
+      "title": "PLAT-120: Gateway 502s during deploy",
+      "at": "2026-03-11",
+      "author": "Manav Shah",
+      "mentions": [
+        "api-gateway"
+      ],
+      "assumes": [],
+      "text": "Partners saw 502s for 90 seconds during a gateway deploy because old pods closed connections early. Added a 30-second drain period and connection retries in Envoy."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+falkordb
+litellm
+mcp>=2.3       # litellm imports it on the tool-calling path; older mcp breaks with pydantic 2.14
+pydantic
+python-dotenv
+pytest
+httpx

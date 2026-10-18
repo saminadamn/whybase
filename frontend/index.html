@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WhyBase</title>
+  <meta name="description" content="The company brain that knows why — and knows when it's out of date.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='8' width='28' height='18' rx='3' fill='%23FFE066' stroke='%232A2420' stroke-width='2'/%3E%3Ctext x='16' y='22' font-size='14' text-anchor='middle' font-family='sans-serif' font-weight='800' fill='%232A2420'%3EW%3C/text%3E%3C/svg%3E">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.30.2/cytoscape.min.js" defer></script>
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#composer-input">Skip to the question box</a>
+
+  <header class="topbar">
+    <div class="brand">
+      <h1 class="wordmark"><span class="hl-swipe">Why</span>Base</h1>
+      <span class="company-tag">Kettle Labs · synthetic data</span>
+    </div>
+    <p class="stats mono" id="stats" aria-label="Graph size">&nbsp;</p>
+    <div class="pills">
+      <span class="pill" id="pill-graph"><span class="dot"></span><span class="pill-text">Graph…</span></span>
+      <span class="pill pill-llm" id="pill-llm" hidden>Offline mode</span>
+    </div>
+    <div class="reset-wrap">
+      <button type="button" class="linkbtn" id="reset-btn" aria-haspopup="dialog" aria-expanded="false">Reset demo</button>
+      <div class="popover" id="reset-pop" role="dialog" aria-label="Reset demo" hidden>
+        <p>This wipes the graph and reloads Kettle Labs. Continue?</p>
+        <div class="row-end">
+          <button type="button" class="btn-text" data-close>Cancel</button>
+          <button type="button" class="btn btn-red" id="reset-confirm">Reset</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="banner" id="banner" role="alert" hidden>
+    <strong>Graph down.</strong> Graph database is not reachable. Run <code>make up</code>.
+    <button type="button" class="btn btn-small" id="banner-retry">Retry</button>
+  </div>
+
+  <main class="layout" id="layout" data-view="chat">
+    <!-- ============================== DESK ============================== -->
+    <aside class="desk" id="panel-desk" aria-label="Desk">
+      <section class="card ingest" aria-labelledby="ingest-title">
+        <h2 id="ingest-title">Something changed?</h2>
+        <p class="sub">Paste a message, decision or meeting note.</p>
+        <form id="ingest-form" novalidate>
+          <label class="sr-only" for="ingest-text">Message</label>
+          <textarea id="ingest-text" rows="4" maxlength="2000"
+            placeholder="e.g. &quot;Team call today: moving event-bus to Redpanda, Kafka ops cost too much. — Priya&quot;"></textarea>
+          <label class="sr-only" for="ingest-example">Fill in an example message</label>
+          <select id="ingest-example" class="ingest-example"><option value="">Try an example…</option></select>
+          <div class="ingest-row">
+            <label class="sr-only" for="ingest-author">Author</label>
+            <select id="ingest-author"><option value="">Detect from message</option></select>
+            <button type="submit" class="btn btn-yellow" id="ingest-btn" disabled>Read it</button>
+          </div>
+        </form>
+        <div id="proposal" aria-live="polite"></div>
+      </section>
+
+      <section class="card" aria-labelledby="stale-title">
+        <div class="card-head">
+          <h2 id="stale-title">Out of date</h2>
+          <span class="count-stamp" id="stale-count" aria-label="Stale sources">–</span>
+        </div>
+        <ul class="list" id="stale-list"></ul>
+      </section>
+
+      <section class="card" aria-labelledby="risk-title">
+        <h2 id="risk-title">At risk</h2>
+        <p class="sub">Systems only one active person still knows.</p>
+        <ul class="list" id="risk-list"></ul>
+      </section>
+
+      <section class="card" aria-labelledby="tt-title">
+        <h2 id="tt-title">Time travel</h2>
+        <form class="tt-form" id="tt-form">
+          <label class="sr-only" for="tt-system">System</label>
+          <select id="tt-system"></select>
+          <label class="sr-only" for="tt-date">Date</label>
+          <input type="date" id="tt-date">
+          <button type="submit" class="btn btn-small">Show</button>
+        </form>
+        <p class="tt-result" id="tt-result" aria-live="polite"></p>
+      </section>
+
+      <details class="card" id="lb-details">
+        <summary><h2>Load-bearing decisions</h2></summary>
+        <p class="sub">PageRank over RELIES_ON. Click one to see what breaks.</p>
+        <ol class="lb-list" id="lb-list"></ol>
+      </details>
+    </aside>
+
+    <!-- ============================== CHAT ============================== -->
+    <section class="chat" id="panel-chat" aria-label="Chat">
+      <div class="midtabs" role="tablist" aria-label="Main view">
+        <button type="button" role="tab" data-view-btn="chat" aria-selected="true">Chat</button>
+        <button type="button" role="tab" data-view-btn="evidence" aria-selected="false">Evidence</button>
+      </div>
+      <div class="messages" id="messages" aria-live="polite" aria-relevant="additions">
+        <div class="empty-chat" id="empty-chat">
+          <h2>Ask Kettle Labs anything about <em>why</em>.</h2>
+          <p class="sub">Every answer is a walk through the company graph. The path is shown, so you can check it.</p>
+          <div class="suggestions" id="suggestions"></div>
+          <button type="button" class="linkbtn see-all" id="see-all" hidden>See all example questions</button>
+        </div>
+      </div>
+      <form class="composer" id="composer">
+        <div class="ac" id="autocomplete" role="listbox" hidden></div>
+        <div class="examples-panel" id="examples-panel" role="dialog" aria-label="Example questions" hidden>
+          <div class="examples-head">
+            <h2>Example questions</h2>
+            <button type="button" class="icon-btn" id="examples-close" aria-label="Close examples">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
+          </div>
+          <p class="sub">Click one to ask it. The stamp shows what a fresh graph returns.</p>
+          <div id="examples-body"></div>
+        </div>
+        <button type="button" class="btn btn-small examples-btn" id="examples-btn" aria-expanded="false" aria-controls="examples-panel">Examples</button>
+        <label class="sr-only" for="composer-input">Ask a question</label>
+        <textarea id="composer-input" rows="1" maxlength="500" autocomplete="off"
+          placeholder="Ask why, who knows, what's out of date…  ( / to focus )" aria-autocomplete="list" aria-controls="autocomplete"></textarea>
+        <button type="submit" class="btn btn-yellow" id="ask-btn">Ask</button>
+      </form>
+    </section>
+
+    <!-- ============================== EVIDENCE ============================== -->
+    <section class="evidence" id="panel-evidence" aria-label="Evidence">
+      <div class="midtabs" role="tablist" aria-label="Main view">
+        <button type="button" role="tab" data-view-btn="chat" aria-selected="false">Chat</button>
+        <button type="button" role="tab" data-view-btn="evidence" aria-selected="true">Evidence</button>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Evidence views">
+        <button type="button" role="tab" id="tab-graph" aria-controls="pane-graph" aria-selected="true">Graph</button>
+        <button type="button" role="tab" id="tab-path" aria-controls="pane-path" aria-selected="false">Path</button>
+        <button type="button" role="tab" id="tab-trace" aria-controls="pane-trace" aria-selected="false">Trace</button>
+      </div>
+
+      <div class="pane pane-graph" id="pane-graph" role="tabpanel" aria-labelledby="tab-graph">
+        <div class="graph-controls">
+          <button type="button" class="icon-btn" id="g-fit" title="Fit" aria-label="Fit graph">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4"/></svg></button>
+          <button type="button" class="icon-btn" id="g-zin" title="Zoom in" aria-label="Zoom in">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3 8h10"/></svg></button>
+          <button type="button" class="icon-btn" id="g-zout" title="Zoom out" aria-label="Zoom out">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10"/></svg></button>
+          <button type="button" class="icon-btn wide" id="g-all" title="Show everything">Show everything</button>
+        </div>
+        <div class="cy" id="cy" aria-label="Graph view. The Path tab has the same information as text."></div>
+        <p class="graph-empty" id="graph-empty">Ask something and the part of the graph behind the answer shows up here.</p>
+        <div class="drawer" id="drawer" hidden>
+          <button type="button" class="icon-btn drawer-close" id="drawer-close" aria-label="Close details">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
+          <div id="drawer-body"></div>
+        </div>
+      </div>
+
+      <div class="pane pane-path" id="pane-path" role="tabpanel" aria-labelledby="tab-path" hidden>
+        <div id="path-body"><p class="muted">Paths from the last answer show up here, step by step.</p></div>
+      </div>
+
+      <div class="pane pane-trace" id="pane-trace" role="tabpanel" aria-labelledby="tab-trace" hidden>
+        <div id="trace-body"><p class="muted">Each tool call and graph query from the last answer shows up here.</p></div>
+      </div>
+
+      <ul class="legend" aria-label="Colour key">
+        <li><i class="sw sw-person"></i>Person</li>
+        <li><i class="sw sw-team"></i>Team</li>
+        <li><i class="sw sw-system"></i>System</li>
+        <li><i class="sw sw-project"></i>Project</li>
+        <li><i class="sw sw-source"></i>Source</li>
+        <li><i class="sw sw-decision"></i>Decision</li>
+        <li><i class="sw sw-superseded"></i><s>Superseded</s></li>
+      </ul>
+    </section>
+  </main>
+
+  <nav class="tabbar" aria-label="Sections">
+    <button type="button" data-view-btn="chat" aria-current="page">Chat</button>
+    <button type="button" data-view-btn="evidence">Evidence</button>
+    <button type="button" data-view-btn="desk">Desk</button>
+  </nav>
+
+  <div class="toasts" id="toasts" aria-live="polite" role="status"></div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+# Render Blueprint: the app as one Docker web service. FalkorDB lives in FalkorDB Cloud (see docs/DEPLOY.md).
+# Values marked sync: false are prompted for in the Render dashboard and never stored in git.
+services:
+  - type: web
+    name: whybase
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: FALKOR_HOST
+        sync: false
+      - key: FALKOR_PORT
+        sync: false
+      - key: FALKOR_USERNAME
+        sync: false
+      - key: FALKOR_PASSWORD
+        sync: false
+      - key: FALKOR_SSL
+        value: "true"
+      - key: GRAPH_NAME
+        value: whybase
+      - key: LLM_MODEL
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
