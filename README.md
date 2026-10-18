@@ -8,6 +8,8 @@ WhyBase stores a company's people, teams, systems, projects, sources (docs, chat
 
 **Track:** Track 03 — Company Brain · *Graph Hacks: Context for AI Agents* (WeMakeDevs × FalkorDB)
 
+**Live demo:** <https://whybase.onrender.com> (free instance: the first load after a quiet spell takes about 50 s; the graph resets to Kettle Labs on every restart)
+
 > All data is synthetic. Kettle Labs is a fictional company.
 
 ---
