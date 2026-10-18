@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 from contextlib import asynccontextmanager
 from datetime import date
 from pathlib import Path
@@ -33,7 +34,8 @@ async def lifespan(_: FastAPI):
         if seed.ensure_seeded():
             log.info("Graph '%s' was empty; loaded Kettle Labs seed.", db.graph_name())
     except db.GraphUnavailable:
-        log.warning(db.UNREACHABLE)
+        log.warning("%s (tried %s:%s; set FALKOR_HOST/FALKOR_PORT)", db.UNREACHABLE,
+                    os.getenv("FALKOR_HOST", "localhost"), os.getenv("FALKOR_PORT", "6379"))
     yield
 
 

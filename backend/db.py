@@ -82,7 +82,10 @@ def _convert(value: Any) -> Any:
 
 def _execute(name: str, params: dict[str, Any], read_only: bool) -> tuple[list[dict[str, Any]], float]:
     cypher = QUERIES[name]
-    g = graph()
+    try:
+        g = graph()   # the FalkorDB client connects on creation, so this can fail too
+    except (RedisConnectionError, RedisTimeoutError, ConnectionRefusedError, OSError) as exc:
+        raise GraphUnavailable(UNREACHABLE) from exc
     start = time.perf_counter()
     attempts = 2 if read_only else 1   # a read that hits FalkorDB's query timeout is retried once
     for attempt in range(attempts):
